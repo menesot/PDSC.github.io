@@ -14,6 +14,7 @@
             color: #333;
         }
 
+        /* Marca de agua sutil */
         body::before {
             content: "";
             position: fixed;
@@ -59,6 +60,7 @@
             position: relative;
         }
 
+        /* Línea central */
         .timeline-container::after {
             content: '';
             position: absolute;
@@ -66,6 +68,7 @@
             background-color: #7B2B95;
             top: 0; bottom: 0; left: 50%;
             margin-left: -2px;
+            border-radius: 10px;
         }
 
         .meeting-card {
@@ -100,48 +103,62 @@
             transition: 0.3s;
         }
 
-        .content:hover { transform: translateY(-5px); }
+        .content:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(123, 43, 149, 0.1); }
 
-        .date { font-weight: 700; color: #7B2B95; font-size: 0.9rem; }
-        .title { font-size: 1.3rem; margin: 10px 0; color: #111; }
+        .acta-no { font-weight: 700; color: #7B2B95; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .date { display: block; font-size: 1.1rem; font-weight: 700; margin: 5px 0; }
+        .location { font-size: 0.85rem; color: #666; margin-bottom: 15px; display: block; }
 
-        /* Estilos para Asistentes y Tareas */
-        .meta-info {
-            margin: 15px 0;
-            font-size: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
         }
 
         .badge-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
             justify-content: inherit;
+            margin-bottom: 15px;
         }
 
         .badge {
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
-            background: #eee;
-            color: #555;
+            background: #f3e5f5;
+            color: #7B2B95;
             font-size: 0.75rem;
+            font-weight: 500;
         }
 
-        .badge.task { background: #E1BEE7; color: #7B2B95; border: 1px solid #7B2B95; }
+        .topics-list {
+            padding: 0;
+            margin: 0 0 20px 0;
+            list-style: none;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .topics-list li { margin-bottom: 6px; }
+
+        .left .topics-list li::after { content: " •"; color: #7B2B95; font-weight: bold; }
+        .right .topics-list li::before { content: "• "; color: #7B2B95; font-weight: bold; }
 
         .btn-download {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 15px;
             padding: 10px 20px;
             background-color: #7B2B95;
-            color: white;
+            color: white !important;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         @media screen and (max-width: 768px) {
@@ -150,6 +167,8 @@
             .meeting-card::after { left: 21px; }
             .right { left: 0%; }
             .badge-group { justify-content: flex-start; }
+            .left .topics-list li::after { content: ""; }
+            .left .topics-list li::before { content: "• "; }
         }
     </style>
 </head>
@@ -164,47 +183,76 @@
 
         <div class="meeting-card left">
             <div class="content">
-                <span class="date">20 Octubre, 2025</span>
-                <h3 class="title">Reunión de Definición</h3>
+                <span class="acta-no">Acta #01</span>
+                <span class="date">13 de febrero de 2025</span>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Escuela de Ingeniería Informática</span>
                 
-                <div class="meta-info">
-                    <strong>👥 Asistentes:</strong>
-                    <div class="badge-group">
-                        <span class="badge">Ana García</span>
-                        <span class="badge">Carlos Pérez</span>
-                        <span class="badge">Lucía Sanz</span>
-                    </div>
+                <span class="section-title">Asistentes</span>
+                <div class="badge-group">
+                    <span class="badge">Todos</span>
                 </div>
 
-                <div class="meta-info">
-                    <strong>✅ Tareas Acordadas:</strong>
-                    <div class="badge-group">
-                        <span class="badge task">Configurar Repo</span>
-                        <span class="badge task">Diseño Logo</span>
-                    </div>
-                </div>
+                <span class="section-title">Temas tratados</span>
+                <ul class="topics-list">
+                    <li>Elección del nombre del grupo (PucelaCar)</li>
+                    <li>Asignación de roles iniciales</li>
+                    <li>Primer contacto con la metodología</li>
+                </ul>
 
-                <a href="docs/actas/acta_01.pdf" class="btn-download"><i class="fas fa-file-pdf"></i> Acta completa</a>
+                <a href="docs/actas/Acta_01.pdf" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
             </div>
         </div>
 
         <div class="meeting-card right">
             <div class="content">
-                <span class="date">27 Octubre, 2025</span>
-                <h3 class="title">Seguimiento Sprint 1</h3>
-                <p style="font-size: 0.9rem; color: #666;">Revisión de los primeros prototipos de la interfaz.</p>
+                <span class="acta-no">Acta #02</span>
+                <span class="date">20 de febrero de 2025</span>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Escuela de Ingeniería Informática</span>
                 
-                <div class="meta-info">
-                    <strong>👥 Asistentes:</strong>
-                    <div class="badge-group">
-                        <span class="badge">Todo el equipo</span>
-                    </div>
+                <span class="section-title">Asistentes</span>
+                <div class="badge-group">
+                    <span class="badge">Todos</span>
                 </div>
 
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta completa</a>
+                <span class="section-title">Temas tratados</span>
+                <ul class="topics-list">
+                    <li>Firma de la constitución del equipo</li>
+                    <li>Reparto de tareas de planificación</li>
+                    <li>Discusión de herramientas tecnológicas</li>
+                </ul>
+
+                <a href="docs/actas/Acta_02.pdf" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+            </div>
+        </div>
+
+        <div class="meeting-card left">
+            <div class="content">
+                <span class="acta-no">Acta #03</span>
+                <span class="date">27 de febrero de 2025</span>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Online (Discord)</span>
+                
+                <span class="section-title">Asistentes</span>
+                <div class="badge-group">
+                    <span class="badge">Azael</span>
+                    <span class="badge">Dario</span>
+                    <span class="badge">Dante</span>
+                    <span class="badge">Ismael</span>
+                    <span class="badge">Mario</span>
+                    <span class="badge">Marcos</span>
+                </div>
+
+                <span class="section-title">Temas tratados</span>
+                <ul class="topics-list">
+                    <li>Revisión del Plan de Proyecto</li>
+                    <li>Gestión de Riesgos</li>
+                    <li>Preparación de la primera entrega</li>
+                </ul>
+
+                <a href="docs/actas/Acta_03.pdf" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
             </div>
         </div>
 
     </main>
+
 </body>
 </html>
