@@ -7,13 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- Configuración General (Consistente con Index) --- */
         body, html {
             margin: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            scroll-behavior: smooth;
         }
 
         body::before {
@@ -25,11 +23,10 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain; 
-            opacity: 0.05; /* Más sutil para no distraer del contenido largo */
+            opacity: 0.05;
             z-index: -1;
         }
 
-        /* --- Encabezado --- */
         header {
             background: white;
             padding: 20px;
@@ -53,126 +50,113 @@
             gap: 5px;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: #7B2B95;
-        }
+        h1 { margin: 0; font-size: 1.8rem; color: #7B2B95; }
 
-        /* --- Contenedor de la Línea de Tiempo --- */
         .timeline-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 20px;
             position: relative;
         }
 
-        /* La línea vertical */
         .timeline-container::after {
             content: '';
             position: absolute;
             width: 4px;
             background-color: #7B2B95;
-            top: 0;
-            bottom: 0;
-            left: 50%;
+            top: 0; bottom: 0; left: 50%;
             margin-left: -2px;
-            border-radius: 10px;
         }
 
-        /* --- Tarjetas de Reunión --- */
         .meeting-card {
             padding: 10px 40px;
             position: relative;
-            background-color: inherit;
             width: 50%;
             box-sizing: border-box;
         }
 
-        /* Círculos indicadores */
         .meeting-card::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             right: -10px;
             background-color: white;
             border: 4px solid #7B2B95;
-            top: 15px;
+            top: 25px;
             border-radius: 50%;
             z-index: 1;
         }
 
-        .left { left: 0; }
-        .right { left: 50%; }
-
+        .left { left: 0; text-align: right; }
+        .right { left: 50%; text-align: left; }
         .right::after { left: -10px; }
 
         .content {
-            padding: 20px;
-            background-color: white;
-            position: relative;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
 
-        .content:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(123, 43, 149, 0.15);
+        .content:hover { transform: translateY(-5px); }
+
+        .date { font-weight: 700; color: #7B2B95; font-size: 0.9rem; }
+        .title { font-size: 1.3rem; margin: 10px 0; color: #111; }
+
+        /* Estilos para Asistentes y Tareas */
+        .meta-info {
+            margin: 15px 0;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .date {
-            font-weight: 700;
-            color: #7B2B95;
-            display: block;
-            margin-bottom: 5px;
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: inherit;
         }
 
-        .title {
-            font-size: 1.2rem;
-            margin: 0 0 10px 0;
-            color: #222;
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: #eee;
+            color: #555;
+            font-size: 0.75rem;
         }
 
-        .description {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
+        .badge.task { background: #E1BEE7; color: #7B2B95; border: 1px solid #7B2B95; }
 
-        /* Botón de descarga del acta */
         .btn-download {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 15px;
+            margin-top: 15px;
+            padding: 10px 20px;
             background-color: #7B2B95;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            transition: background 0.3s;
+            border-radius: 30px;
+            font-size: 0.9rem;
         }
 
-        .btn-download:hover {
-            background-color: #5a1f6d;
-        }
-
-        /* --- Responsivo --- */
         @media screen and (max-width: 768px) {
             .timeline-container::after { left: 31px; }
-            .meeting-card { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .meeting-card { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
             .meeting-card::after { left: 21px; }
             .right { left: 0%; }
+            .badge-group { justify-content: flex-start; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="./index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Volver</a>
+        <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Volver</a>
         <h1>📅 Actas de Reuniones</h1>
     </header>
 
@@ -180,38 +164,47 @@
 
         <div class="meeting-card left">
             <div class="content">
-                <span class="date">15 Octubre, 2025</span>
-                <h3 class="title">Reunión de Inicio (Kick-off)</h3>
-                <p class="description">Definición de roles de equipo, elección de metodologías de trabajo y establecimiento de las primeras herramientas de comunicación.</p>
-                <a href="docs/actas/acta_01.pdf" class="btn-download">
-                    <i class="fas fa-file-pdf"></i> Ver Acta
-                </a>
+                <span class="date">20 Octubre, 2025</span>
+                <h3 class="title">Reunión de Definición</h3>
+                
+                <div class="meta-info">
+                    <strong>👥 Asistentes:</strong>
+                    <div class="badge-group">
+                        <span class="badge">Ana García</span>
+                        <span class="badge">Carlos Pérez</span>
+                        <span class="badge">Lucía Sanz</span>
+                    </div>
+                </div>
+
+                <div class="meta-info">
+                    <strong>✅ Tareas Acordadas:</strong>
+                    <div class="badge-group">
+                        <span class="badge task">Configurar Repo</span>
+                        <span class="badge task">Diseño Logo</span>
+                    </div>
+                </div>
+
+                <a href="docs/actas/acta_01.pdf" class="btn-download"><i class="fas fa-file-pdf"></i> Acta completa</a>
             </div>
         </div>
 
         <div class="meeting-card right">
             <div class="content">
-                <span class="date">22 Octubre, 2025</span>
-                <h3 class="title">Análisis de Requisitos</h3>
-                <p class="description">Brainstorming sobre las funcionalidades principales de PucelaCar y revisión de la normativa del proyecto PDSC.</p>
-                <a href="docs/actas/acta_02.pdf" class="btn-download">
-                    <i class="fas fa-file-pdf"></i> Ver Acta
-                </a>
+                <span class="date">27 Octubre, 2025</span>
+                <h3 class="title">Seguimiento Sprint 1</h3>
+                <p style="font-size: 0.9rem; color: #666;">Revisión de los primeros prototipos de la interfaz.</p>
+                
+                <div class="meta-info">
+                    <strong>👥 Asistentes:</strong>
+                    <div class="badge-group">
+                        <span class="badge">Todo el equipo</span>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta completa</a>
             </div>
         </div>
 
-        <div class="meeting-card left">
-            <div class="content">
-                <span class="date">05 Noviembre, 2025</span>
-                <h3 class="title">Diseño de Arquitectura</h3>
-                <p class="description">Selección del stack tecnológico y diagramas iniciales de la base de datos y flujos de usuario.</p>
-                <a href="docs/actas/acta_03.pdf" class="btn-download">
-                    <i class="fas fa-file-pdf"></i> Ver Acta
-                </a>
-            </div>
-        </div>
-
-        </main>
-
+    </main>
 </body>
 </html>
