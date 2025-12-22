@@ -112,7 +112,7 @@
             font-weight: 700;
             color: #999;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin: 15px 0 8px 0; /* Un poco más de margen arriba */
             display: block;
         }
 
@@ -133,20 +133,58 @@
             font-weight: 500;
         }
 
-        .topics-list, .agreements-list {
+        /* Estilos para la lista normal de temas */
+        .topics-list {
             padding: 0;
             margin: 0 0 20px 0;
             list-style: none;
             font-size: 0.9rem;
             line-height: 1.4;
         }
+        .topics-list li { margin-bottom: 6px; }
+        .left .topics-list li::after { content: " •"; color: #7B2B95; font-weight: bold; }
+        .right .topics-list li::before { content: "• "; color: #7B2B95; font-weight: bold; }
 
-        .topics-list li, .agreements-list li { margin-bottom: 6px; }
 
-        .left .topics-list li::after, .left .agreements-list li::after { content: " •"; color: #7B2B95; font-weight: bold; }
-        .right .topics-list li::before, .right .agreements-list li::before { content: "• "; color: #7B2B95; font-weight: bold; }
+        /* ---- NUEVOS ESTILOS VISUALES PARA LOS ACUERDOS ---- */
+        .agreements-list {
+            padding: 0;
+            margin: 0 0 10px 0;
+            list-style: none;
+        }
 
-        .agreements-list li { color: #555; font-style: italic; }
+        .agreements-list li {
+            margin-bottom: 8px;
+            padding: 10px 12px;
+            background-color: #f9f4fb; /* Fondo morado muy claro */
+            border-left: 4px solid #7B2B95; /* Borde de acento */
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #444;
+            display: flex;
+            align-items: flex-start; /* Alinear arriba si el texto es largo */
+            text-align: left; /* Asegurar texto a la izquierda siempre */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        /* Añadir icono de check automáticamente */
+        .agreements-list li::before {
+            content: "\f00c"; /* Icono check de FontAwesome */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: #7B2B95;
+            font-size: 0.9rem;
+            margin-top: 2px; /* Ajuste fino para alinear con texto */
+        }
+        
+        /* Eliminar los bullets antiguos para los acuerdos */
+        .left .agreements-list li::after,
+        .right .agreements-list li::before {
+            content: none;
+        }
+        /* -------------------------------------------------- */
+
 
         @media screen and (max-width: 768px) {
             .timeline-container::after { left: 31px; }
@@ -154,8 +192,8 @@
             .meeting-card::after { left: 21px; }
             .right { left: 0%; }
             .badge-group { justify-content: flex-start; }
-            .left .topics-list li::after, .left .agreements-list li::after { content: ""; }
-            .left .topics-list li::before, .left .agreements-list li::before { content: "• "; }
+            .left .topics-list li::after { content: ""; }
+            .left .topics-list li::before { content: "• "; }
         }
     </style>
 </head>
