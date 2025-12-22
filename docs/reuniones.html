@@ -135,7 +135,7 @@
 
         .topics-list {
             padding: 0;
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             list-style: none;
             font-size: 0.9rem;
             line-height: 1.4;
@@ -146,18 +146,17 @@
         .left .topics-list li::after { content: " •"; color: #7B2B95; font-weight: bold; }
         .right .topics-list li::before { content: "• "; color: #7B2B95; font-weight: bold; }
 
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background-color: #7B2B95;
-            color: white !important;
-            text-decoration: none;
-            border-radius: 30px;
+        /* Nueva sección de tareas */
+        .tasks-assigned {
+            background-color: #faf7ff;
+            border-left: 3px solid #7B2B95;
+            padding: 10px 15px;
+            border-radius: 0 10px 10px 0;
             font-size: 0.85rem;
-            font-weight: 500;
+            text-align: left;
         }
+
+        .tasks-assigned b { color: #5a1e6d; }
 
         @media screen and (max-width: 768px) {
             .timeline-container::after { left: 31px; }
@@ -190,11 +189,17 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Lectura en común del enunciado</li>
+                    <li>Lectura en común del enunciado de la práctica</li>
                     <li>Decidir Roles Principales</li>
                     <li>Hacer equipo</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    <b>Miguel:</b> GitAdmin<br>
+                    <b>Carlos:</b> Gestor de Planificador<br>
+                    <b>Jaime:</b> FullStack<br>
+                    <b>Javier:</b> Gestor de la máquina virtual y el SQL
+                </div>
             </div>
         </div>
 
@@ -210,9 +215,14 @@
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
                     <li>Tomar decisiones iniciales</li>
-                    <li>Decidir fecha y hora de reunión próxima semana</li>
+                    <li>Decidir fecha y hora de reunión de la próxima semana</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    - Uso de Java y Spring Boot<br>
+                    - Uso de SQL para almacenamiento<br>
+                    - Solicitar VM para base de datos
+                </div>
             </div>
         </div>
 
@@ -227,10 +237,15 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Discutir pasos tras decisiones iniciales</li>
+                    <li>Discutir los siguientes pasos tras las decisiones iniciales</li>
                     <li>Decidir el diseño del proyecto</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    - Sistema organizado como un MVC activo<br>
+                    - Aplicación distribuida cliente-servidor<br>
+                    <b>Jaime:</b> Realizar los Mockups
+                </div>
             </div>
         </div>
 
@@ -247,9 +262,12 @@
                 <ul class="topics-list">
                     <li>Empezar a documentar la planificación</li>
                     <li>Desarrollo de descripción de arquitectura y persistencia</li>
-                    <li>Diseño de casos de uso</li>
+                    <li>Desarrollo de diseño de casos de uso</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    <b>Todos:</b> Mirar el diseño detallado para comenzar el desarrollo en la siguiente reunión.
+                </div>
             </div>
         </div>
 
@@ -264,11 +282,15 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Comienzo desarrollo de estilos</li>
+                    <li>Comenzar el desarrollo de los estilos</li>
                     <li>Dibujo del diagrama decomposition style</li>
-                    <li>Inicio de la máquina virtual UVa</li>
+                    <li>Inicio de la máquina virtual proporcionada por la UVa</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    <b>Jaime:</b> Desarrollar el diagrama de herencia<br>
+                    <b>Javier:</b> Desarrollo del DataModel
+                </div>
             </div>
         </div>
 
@@ -283,11 +305,15 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Comprobar diagramas hechos</li>
-                    <li>Comprobar mockups y alternativas</li>
+                    <li>Comprobar los diagramas hechos</li>
+                    <li>Comprobar los mockups y alternativas</li>
                     <li>Inicio del diagrama de clases detallado</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    - Realizar interfaz por línea de comando<br>
+                    <b>Javier:</b> Realizar el diagrama de clases detallados
+                </div>
             </div>
         </div>
 
@@ -303,10 +329,13 @@
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
                     <li>Inicio del diagrama de estilo C&C</li>
-                    <li>Comprobar diagramas ya creados</li>
+                    <li>Comprobar los diagramas ya creados</li>
                     <li>Concretar más reuniones semanales</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    <b>Equipo:</b> Reunirse el próximo miércoles.
+                </div>
             </div>
         </div>
 
@@ -321,11 +350,14 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Reparto de tareas</li>
-                    <li>Iniciar el servidor</li>
-                    <li>Finalizar diagramas de clases y C&C</li>
+                    <li>Reparto de tareas e inicio del servidor</li>
+                    <li>Finalizar el diagrama de clases detallado</li>
+                    <li>Finalizar el diagrama C&C</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    <b>Carlos:</b> Finalizar el diagrama C&C
+                </div>
             </div>
         </div>
 
@@ -340,11 +372,15 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Diagramas de secuencia y despliegue</li>
-                    <li>Dudas sobre diagrama C&C</li>
-                    <li>Conectar VSCode a ordenadores de proyecto git</li>
+                    <li>Empezar a desarrollar diagramas de secuencia</li>
+                    <li>Restructurar la máquina virtual</li>
+                    <li>Conectar VSCode a ordenadores proyecto git</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    - Separar en VM la base de datos de los servidores<br>
+                    <b>Jaime:</b> Realizar diagramas de secuencia y despliegue
+                </div>
             </div>
         </div>
 
@@ -359,10 +395,13 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Implementar login a la máquina virtual</li>
-                    <li>Finalizar diagramas de secuencias y despliegue</li>
+                    <li>Implementar el login a la máquina virtual</li>
+                    <li>Finalizar los diagramas de secuencias y de despliegue</li>
                 </ul>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Acta Completa</a>
+                <span class="section-title">Tareas y Acuerdos</span>
+                <div class="tasks-assigned">
+                    <b>Equipo:</b> Reunirnos el próximo jueves 18.
+                </div>
             </div>
         </div>
 
