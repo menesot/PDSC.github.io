@@ -51,8 +51,37 @@
             border-top: 6px solid var(--pucela-purple);
         }
 
-        .member-header { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .member-header h2 { margin: 0; color: var(--pucela-purple); }
+       /* Contenedor flexible para alinear Nombre y Rol */
+        .header-top {
+            display: flex;
+            justify-content: space-between; /* Empuja el nombre a la izq y el rol a la der */
+            align-items: center; /* Alineación vertical perfecta */
+            margin-bottom: 5px;
+        }
+        
+        .member-header h2 {
+            margin: 0;
+            color: var(--pucela-purple);
+            font-size: 1.6rem;
+        }
+        
+        /* Estilo para la etiqueta del Rol */
+        .role-tag {
+            background-color: var(--pucela-purple);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .member-header {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
         .alias { font-style: italic; color: #666; }
         .email { font-size: 0.85rem; color: var(--pucela-purple); text-decoration: none; }
 
@@ -104,8 +133,11 @@
     <div class="team-grid">
 
         <div class="member-card">
-            <div class="member-header">
-                <h2>Carlos Meneses Soto</h2>
+           <div class="member-header">
+                <div class="header-top">
+                    <h2>Carlos Meneses Soto</h2>
+                    <span class="role-tag">Project Manager</span> 
+                </div>
                 <div class="alias">@carlos</div>
                 <a href="mailto:correo@estudiantes.uva.es" class="email">carlos.meneses@estudiantes.uva.es</a>
             </div>
@@ -142,25 +174,39 @@
                 <span class="skill-title">Habilidades Tecnológicas</span>
                 
                 <div class="skill-row">
+                    <span class="skill-name">Reporting</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill tech-fill" style="width: 100%;"></div> </div>
+                    <span class="skill-value">5/5</span>
+                </div>
+                <div class="skill-row">
                     <span class="skill-name">Java</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill tech-fill" style="width: 80%;"></div> </div>
-                    <span class="skill-value">4</span>
+                        <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
+                    <span class="skill-value">3/5</span>
                 </div>
 
                 <div class="skill-row">
                     <span class="skill-name">JavaScript</span>
                     <div class="skill-bar-wrapper">
                         <div class="skill-bar-fill tech-fill" style="width: 100%;"></div> </div>
-                    <span class="skill-value">5</span>
+                    <span class="skill-value">5/5</span>
                 </div>
 
                 <div class="skill-row">
-                    <span class="skill-name">Reporting</span>
+                    <span class="skill-name">SysOP-Linux</span>
                     <div class="skill-bar-wrapper">
                         <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
-                    <span class="skill-value">3</span>
+                    <span class="skill-value">3/5</span>
                 </div>
+
+                <div class="skill-row">
+                    <span class="skill-name">Web-dev</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
+                    <span class="skill-value">3/5</span>
+                </div>
+                
             </div>
 
             <div class="skill-container">
@@ -169,17 +215,52 @@
                 <div class="skill-row">
                     <span class="skill-name">Comunicación</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                        <div class="skill-bar-fill social-fill" style="width: 100%;"></div>
                     </div>
-                    <span class="skill-value">4</span>
+                    <span class="skill-value">5/5</span>
                 </div>
 
                 <div class="skill-row">
                     <span class="skill-name">Organización</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill social-fill" style="width: 100%;"></div>
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
                     </div>
-                    <span class="skill-value">5</span>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Mediador</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Colaboracion</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Critico</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 60%;"></div>
+                    </div>
+                    <span class="skill-value">3/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Iniciador</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Compromiso</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 60%;"></div>
+                    </div>
+                    <span class="skill-value">3/5</span>
                 </div>
             </div>
         </div>
@@ -187,11 +268,13 @@
         
          <div class="member-card">
             <div class="member-header">
-                <h2>Miguel Ángel Sanchez Martín</h2>
+                <div class="header-top">
+                    <h2>Miguel Ángel Sanchez Martin</h2>
+                    <span class="role-tag">GitAdmin</span> 
+                </div>
                 <div class="alias">@alias_usuario</div>
-                <a href="mailto:correo@estudiantes.uva.es" class="email">correo@estudiantes.uva.es</a>
+                <a href="mailto:correo@estudiantes.uva.es" class="email">miguelangel.sanchez.martin@estudiantes.uva.es</a>
             </div>
-
             <table class="status-table">
                 <thead>
                     <tr>
@@ -200,20 +283,22 @@
                         <th>Sem 2</th>
                         <th>Sem 3</th>
                         <th>Sem 4</th>
+                        <th>Sem 5</th>
+                        <th>Sem 6</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="row-label">Capacidad Horaria (h)</td>
-                        <td>10</td><td>12</td><td>8</td><td>10</td>
+                        <td class="row-label">Capacidad Horaria (h/semana)</td>
+                        <td>5</td><td>2</td><td>4</td><td>8</td><td>8</td><td>8</td>
                     </tr>
                     <tr>
-                        <td class="row-label">Disponibilidad (1-10)</td>
-                        <td>9</td><td>7</td><td>5</td><td>8</td>
+                        <td class="row-label">Disponibilidad </td>
+                        <td>L-12 </td><td>L-12 M-9</td><td>L-12 M-10</td><td>L-16 M-9</td><td>L-13</td><td>V-12 S-8.30</td>
                     </tr>
                     <tr>
-                        <td class="row-label">Nivel de Estrés (1-10)</td>
-                        <td>2</td><td>4</td><td>8</td><td>3</td>
+                        <td class="row-label">Nivel de Estrés (1-5)</td>
+                        <td>2</td><td>4</td><td>8</td><td>3</td><td>8</td><td>8</td>
                     </tr>
                 </tbody>
             </table>
@@ -222,25 +307,39 @@
                 <span class="skill-title">Habilidades Tecnológicas</span>
                 
                 <div class="skill-row">
+                    <span class="skill-name">Reporting</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill tech-fill" style="width: 100%;"></div> </div>
+                    <span class="skill-value">5/5</span>
+                </div>
+                <div class="skill-row">
                     <span class="skill-name">Java</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill tech-fill" style="width: 80%;"></div> </div>
-                    <span class="skill-value">4</span>
+                        <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
+                    <span class="skill-value">3/5</span>
                 </div>
 
                 <div class="skill-row">
                     <span class="skill-name">JavaScript</span>
                     <div class="skill-bar-wrapper">
                         <div class="skill-bar-fill tech-fill" style="width: 100%;"></div> </div>
-                    <span class="skill-value">5</span>
+                    <span class="skill-value">5/5</span>
                 </div>
 
                 <div class="skill-row">
-                    <span class="skill-name">Reporting</span>
+                    <span class="skill-name">SysOP-Linux</span>
                     <div class="skill-bar-wrapper">
                         <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
-                    <span class="skill-value">3</span>
+                    <span class="skill-value">3/5</span>
                 </div>
+
+                <div class="skill-row">
+                    <span class="skill-name">Web-dev</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
+                    <span class="skill-value">3/5</span>
+                </div>
+                
             </div>
 
             <div class="skill-container">
@@ -249,21 +348,55 @@
                 <div class="skill-row">
                     <span class="skill-name">Comunicación</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                        <div class="skill-bar-fill social-fill" style="width: 100%;"></div>
                     </div>
-                    <span class="skill-value">4</span>
+                    <span class="skill-value">5/5</span>
                 </div>
 
                 <div class="skill-row">
                     <span class="skill-name">Organización</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill social-fill" style="width: 100%;"></div>
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
                     </div>
-                    <span class="skill-value">5</span>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Mediador</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Colaboracion</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Critico</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 60%;"></div>
+                    </div>
+                    <span class="skill-value">3/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Iniciador</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="skill-value">4/5</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-name">Compromiso</span>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-fill social-fill" style="width: 60%;"></div>
+                    </div>
+                    <span class="skill-value">3/5</span>
                 </div>
             </div>
         </div>
-        
         </div>
 
 </body>
