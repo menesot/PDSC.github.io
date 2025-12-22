@@ -1,29 +1,144 @@
-# PucelaCar
-## Proyecto PDSC 2025/2026
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PucelaCar | PDSC 2025/2026</title>
+    <style>
+        :root {
+            --pucela-purple: #7B2B95; /* Color temático Pucela */
+            --dark-grey: #2c3e50;
+            --light-grey: #ecf0f1;
+        }
 
-Bienvenido al repositorio central de **PucelaCar**, el proyecto de desarrollo de maquinaria pesada simulada mediante tecnologías web (Three.js). Este espacio centraliza toda la documentación, el seguimiento de equipos y la planificación estratégica del ciclo 2025/2026.
+        body, html { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; height: 100%; overflow: hidden; }
 
----
+        /* Contenedor del Canvas 3D */
+        #canvas-container {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; z-index: 1;
+        }
 
-### 📂 Secciones del Proyecto
+        /* Interfaz de Usuario (UI) */
+        #ui-layer {
+            position: relative; z-index: 2;
+            pointer-events: none; /* Permite rotar el 3D a través de la UI */
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: space-between; padding: 40px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%);
+        }
 
-Selecciona una de las siguientes secciones para ver la información detallada:
+        header { color: white; pointer-events: auto; }
+        header h1 { font-size: 3rem; margin: 0; letter-spacing: 2px; }
+        header p { font-size: 1.2rem; opacity: 0.8; }
 
-* [**👥 Información de Equipos**](./equipos.md)  
-    *Conoce a los integrantes, roles y responsabilidades de cada grupo de trabajo.*
+        /* Menú de Navegación */
+        nav { display: flex; gap: 20px; pointer-events: auto; }
+        .nav-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 20px; border-radius: 12px;
+            color: white; text-decoration: none;
+            width: 200px; transition: all 0.3s ease;
+        }
+        .nav-card:hover {
+            background: var(--pucela-purple);
+            transform: translateY(-5px);
+        }
+        .nav-card h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .nav-card p { margin: 0; font-size: 0.85rem; opacity: 0.7; }
 
-* [**📅 Actas de Reuniones**](./reuniones.md)  
-    *Historial de sesiones, acuerdos tomados y próximos pasos (Roadmap).*
+        /* Controles de la excavadora (overlay pequeño) */
+        #controls-hint {
+            position: absolute; bottom: 40px; right: 40px;
+            color: white; font-size: 0.8rem; text-align: right;
+        }
+    </style>
+</head>
+<body>
 
-* [**📑 Documentos de Planificación**](./planificacion.md)  
-    *Cronogramas, gestión de recursos y entregables del proyecto.*
+    <div id="canvas-container"></div>
 
----
+    <div id="ui-layer">
+        <header>
+            <h1>PucelaCar</h1>
+            <p>Proyecto PDSC 2025/2026 | Simulación de Maquinaria Pesada</p>
+        </header>
 
-### 🛠️ Estado del Sistema
-- **Versión actual:** 0.1 (Prototipo base)
-- **Tecnologías:** HTML5, CSS3, JavaScript, Three.js.
-- **Última actualización:** Diciembre 2025.
+        <nav>
+            <a href="pages/equipos.html" class="nav-card">
+                <h3>👥 Equipos</h3>
+                <p>Gestión de roles y miembros del proyecto.</p>
+            </a>
+            <a href="pages/reuniones.html" class="nav-card">
+                <h3>📅 Reuniones</h3>
+                <p>Actas, acuerdos y seguimiento semanal.</p>
+            </a>
+            <a href="pages/planificacion.html" class="nav-card">
+                <h3>📑 Planificación</h3>
+                <p>Cronogramas y documentación técnica.</p>
+            </a>
+        </nav>
 
----
-*PucelaCar es un proyecto académico desarrollado para la asignatura PDSC.*
+        <div id="controls-hint">
+            Usa W-A-S-D para mover la base | Q-E para la cabina | Flechas para el brazo
+        </div>
+    </div>
+
+    <script type="importmap">
+        { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // --- LÓGICA DE LA EXCAVADORA (Resumida para brevedad) ---
+        // Aquí insertarías el código de Three.js que te pasé anteriormente
+        // Adaptado para que el renderer use el contenedor #canvas-container
+        
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1a1a1a); // Fondo oscuro elegante
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(8, 8, 12);
+        camera.lookAt(0, 2, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+
+        // Luz ambiental y direccional
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+        const sunLight = new THREE.DirectionalLight(0xffffff, 1);
+        sunLight.position.set(5, 10, 7);
+        scene.add(sunLight);
+
+        // Piso simple
+        const grid = new THREE.GridHelper(100, 100, 0x444444, 0x222222);
+        scene.add(grid);
+
+        // (Aquí añadirías el código de creación de la excavadora que ya tienes)
+        // Por ahora, pondremos un cubo representante para que veas el efecto
+        const demoBox = new THREE.Mesh(new THREE.BoxGeometry(2,2,2), new THREE.MeshStandardMaterial({color: 0x7B2B95}));
+        demoBox.position.y = 1;
+        scene.add(demoBox);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            demoBox.rotation.y += 0.01; // Animación de ejemplo
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
+</body>
+</html>
