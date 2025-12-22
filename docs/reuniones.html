@@ -112,7 +112,7 @@
             font-weight: 700;
             color: #999;
             text-transform: uppercase;
-            margin: 15px 0 8px 0; /* Un poco más de margen arriba */
+            margin: 15px 0 8px 0;
             display: block;
         }
 
@@ -133,7 +133,7 @@
             font-weight: 500;
         }
 
-        /* Estilos para la lista normal de temas */
+        /* Estilo para Temas Tratados */
         .topics-list {
             padding: 0;
             margin: 0 0 20px 0;
@@ -145,46 +145,47 @@
         .left .topics-list li::after { content: " •"; color: #7B2B95; font-weight: bold; }
         .right .topics-list li::before { content: "• "; color: #7B2B95; font-weight: bold; }
 
-
-        /* ---- NUEVOS ESTILOS VISUALES PARA LOS ACUERDOS ---- */
+        /* Estilo mejorado para Acuerdos Adoptados */
         .agreements-list {
             padding: 0;
-            margin: 0 0 10px 0;
+            margin: 0;
             list-style: none;
         }
 
         .agreements-list li {
             margin-bottom: 8px;
-            padding: 10px 12px;
-            background-color: #f9f4fb; /* Fondo morado muy claro */
-            border-left: 4px solid #7B2B95; /* Borde de acento */
+            padding: 10px 15px;
+            background-color: #f8f6fc;
+            border-left: 4px solid #7B2B95;
             border-radius: 4px;
             font-size: 0.85rem;
             color: #444;
             display: flex;
-            align-items: flex-start; /* Alinear arriba si el texto es largo */
-            text-align: left; /* Asegurar texto a la izquierda siempre */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            align-items: flex-start;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
-        /* Añadir icono de check automáticamente */
+        /* Icono de check para TODOS los acuerdos (Corregido) */
         .agreements-list li::before {
-            content: "\f00c"; /* Icono check de FontAwesome */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-right: 10px;
+            content: "\f00c" !important;
+            font-family: "Font Awesome 6 Free" !important;
+            font-weight: 900 !important;
+            margin-right: 12px;
             color: #7B2B95;
-            font-size: 0.9rem;
-            margin-top: 2px; /* Ajuste fino para alinear con texto */
+            display: inline-block;
         }
-        
-        /* Eliminar los bullets antiguos para los acuerdos */
-        .left .agreements-list li::after,
-        .right .agreements-list li::before {
-            content: none;
-        }
-        /* -------------------------------------------------- */
 
+        /* Limpiamos interferencias de los estilos de timeline previos */
+        .left .agreements-list li::after, 
+        .right .agreements-list li::before {
+            content: "\f00c" !important; 
+        }
+
+        .agreements-list b {
+            color: #7B2B95;
+            margin-right: 4px;
+        }
 
         @media screen and (max-width: 768px) {
             .timeline-container::after { left: 31px; }
@@ -223,10 +224,10 @@
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Miguel es el GitAdmin</li>
-                    <li>Carlos es el Gestor de Planificador</li>
-                    <li>Jaime es el FullStack</li>
-                    <li>Javier es el gestor de la máquina virtual y el SQL</li>
+                    <li><b>Miguel</b> es el GitAdmin</li>
+                    <li><b>Carlos</b> es el Gestor de Planificador</li>
+                    <li><b>Jaime</b> es el FullStack</li>
+                    <li><b>Javier</b> es el gestor de la máquina virtual y el SQL</li>
                 </ul>
             </div>
         </div>
@@ -248,10 +249,10 @@
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
                     <li>Uso de Java como lenguaje de programación</li>
-                    <li>Uso de base de datos relacional junto con SQL para el almacenamiento de datos</li>
-                    <li>Solicitar una máquina virtual para almacenar la base de datos</li>
+                    <li>Uso de SQL para el almacenamiento de datos</li>
+                    <li>Solicitar una máquina virtual para la BD</li>
                     <li>Uso de la biblioteca Spring Boot</li>
-                    <li>Aplazar la reunión para después del examen de PDSC</li>
+                    <li>Aplazar reunión para después del examen de PDSC</li>
                 </ul>
             </div>
         </div>
@@ -267,14 +268,14 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Discutir los siguientes pasos tras las decisiones iniciales</li>
+                    <li>Pasos tras las decisiones iniciales</li>
                     <li>Decidir el diseño del proyecto</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
                     <li>Sistema organizado como un MVC activo</li>
-                    <li>Aplicación distribuida con un diseño cliente-servidor</li>
-                    <li>Jaime se encarga de realizar los Mockups</li>
+                    <li>Diseño cliente-servidor distribuido</li>
+                    <li><b>Jaime</b> se encarga de realizar los Mockups</li>
                 </ul>
             </div>
         </div>
@@ -290,14 +291,13 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Empezar a documentar la planificación</li>
-                    <li>Desarrollo de la descripción de la arquitectura</li>
-                    <li>Desarrollo de la descripción del almacenamiento persistente</li>
-                    <li>Desarrollo de la descripción de la realización en diseño de los casos de uso</li>
+                    <li>Documentar la planificación y arquitectura</li>
+                    <li>Diseño del almacenamiento persistente</li>
+                    <li>Realización en diseño de los casos de uso</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Los integrantes deberán mirar el diseño detallado para comenzar su desarrollo la siguiente reunión</li>
+                    <li>Mirar el diseño detallado para comenzar el desarrollo</li>
                 </ul>
             </div>
         </div>
@@ -313,14 +313,14 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Comenzar el desarrollo de los estilos</li>
-                    <li>Dibujo del diagrama decomposition style</li>
-                    <li>Inicio de la máquina virtual proporcionada por la UVa</li>
+                    <li>Desarrollo de los estilos</li>
+                    <li>Diagrama decomposition style</li>
+                    <li>Máquina virtual UVa</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Jaime se encargará de desarrollar el diagrama de herencia</li>
-                    <li>Javier se encargará del desarrollo del DataModel</li>
+                    <li><b>Jaime</b> desarrollará el diagrama de herencia</li>
+                    <li><b>Javier</b> desarrollará el DataModel</li>
                 </ul>
             </div>
         </div>
@@ -329,22 +329,21 @@
             <div class="content">
                 <span class="acta-no">Acta #06</span>
                 <span class="date">8 de diciembre de 2025</span>
-                <span class="location"><i class="fas fa-video"></i> Reunión telemática</span>
+                <span class="location"><i class="fas fa-video"></i> Telemática</span>
                 <span class="section-title">Asistentes</span>
                 <div class="badge-group">
                     <span class="badge">Miguel</span><span class="badge">Javier</span><span class="badge">Jaime</span><span class="badge">Carlos</span>
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Comprobar los diagramas hechos</li>
-                    <li>Comprobar los mockups y alternativas</li>
+                    <li>Comprobar diagramas y mockups</li>
                     <li>Inicio del diagrama de clases detallado</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Se necesita revisar los mockups</li>
-                    <li>Realizar la interfaz por línea de comando en vez de una Interfaz gráfica</li>
-                    <li>Javier se encargará de realizar el diagrama de clases detallados</li>
+                    <li>Revisar los mockups actuales</li>
+                    <li>Realizar interfaz por línea de comando</li>
+                    <li><b>Javier</b> realizará el diagrama de clases detallado</li>
                 </ul>
             </div>
         </div>
@@ -360,13 +359,12 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Inicio del diagrama de estilo C&C</li>
-                    <li>Comprobar los diagramas ya creados</li>
+                    <li>Diagrama de estilo C&C</li>
                     <li>Concretar más reuniones semanales</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Reunirse el próximo miércoles</li>
+                    <li>Reunirse el próximo miércoles de forma presencial</li>
                 </ul>
             </div>
         </div>
@@ -382,15 +380,13 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Reparto de tareas</li>
-                    <li>Iniciar el servidor</li>
-                    <li>Finalizar el diagrama de clases detallado</li>
-                    <li>Finalizar el diagrama C&C</li>
+                    <li>Reparto de tareas e inicio del servidor</li>
+                    <li>Finalizar diagramas de clases y C&C</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Necesidad de reunirse más esta semana</li>
-                    <li>Carlos finalizará el diagrama C&C</li>
+                    <li>Aumentar frecuencia de reuniones esta semana</li>
+                    <li><b>Carlos</b> finalizará el diagrama C&C</li>
                 </ul>
             </div>
         </div>
@@ -406,15 +402,14 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Empezar a desarrollar los diagramas de secuencia y de despliegue</li>
-                    <li>Consultar dudas sobre el diagrama C&C</li>
-                    <li>Restructurar la maquina virtual siguiendo los diagramas</li>
-                    <li>Conectar VSCode de nuestros ordenadores al proyecto git</li>
+                    <li>Diagramas de secuencia y despliegue</li>
+                    <li>Restructurar la maquina virtual</li>
+                    <li>Conexión VSCode a repositorio Git</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Separaremos en nuestra maquina virtual la base de datos de los servicios</li>
-                    <li>Jaime se encargará de realizar los diagramas de secuencia y de despliegue</li>
+                    <li>Separar BD de los servicios en la VM</li>
+                    <li><b>Jaime</b> realizará diagramas de secuencia/despliegue</li>
                 </ul>
             </div>
         </div>
@@ -430,12 +425,12 @@
                 </div>
                 <span class="section-title">Temas tratados</span>
                 <ul class="topics-list">
-                    <li>Implementar el login a la maquina virtual</li>
-                    <li>Finalizar los diagramas de secuencias y de despliegue</li>
+                    <li>Implementar login en VM</li>
+                    <li>Cierre de diagramas finales</li>
                 </ul>
                 <span class="section-title">Acuerdos adoptados</span>
                 <ul class="agreements-list">
-                    <li>Reunirnos el próximo jueves 18</li>
+                    <li>Próxima reunión: Jueves 18</li>
                 </ul>
             </div>
         </div>
