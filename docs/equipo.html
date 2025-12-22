@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo | PucelaCar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pucela-purple: #7B2B95;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-dark: #2d3436;
+        }
 
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0; padding: 20px;
+            color: var(--text-dark);
+        }
+
+        /* Marca de agua UVa sutil en el fondo */
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('../assets/images/logo-uva.png');
+            background-position: center; background-repeat: no-repeat;
+            background-size: 40%; opacity: 0.05; z-index: -1;
+        }
+
+        .header-nav {
+            max-width: 1200px; margin: 0 auto 30px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .back-btn {
+            text-decoration: none; color: var(--pucela-purple);
+            font-weight: bold; display: flex; align-items: center; gap: 5px;
+        }
+
+        h1 { color: var(--pucela-purple); margin: 0; }
+
+        /* Grid de integrantes: 2 columnas en PC, 1 en móvil */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px; max-width: 1200px; margin: 0 auto;
+        }
+
+        .member-card {
+            background: var(--card-bg);
+            border-radius: 12px; padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--pucela-purple);
+        }
+
+        .basic-info h2 { margin: 0; color: var(--pucela-purple); }
+        .alias { font-style: italic; color: #666; margin-bottom: 5px; }
+        .email { font-size: 0.9rem; color: #888; margin-bottom: 20px; }
+
+        /* Sección de Estatus (Semanal) */
+        .status-section {
+            background: #f1f2f6; border-radius: 8px;
+            padding: 15px; margin-bottom: 20px;
+        }
+        .status-item { margin-bottom: 10px; font-size: 0.85rem; }
+        .status-bar-bg {
+            background: #dfe4ea; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 5px;
+        }
+        .status-bar-fill { height: 100%; background: var(--pucela-purple); }
+
+        /* Skills */
+        .skills-container { margin-bottom: 15px; }
+        .skills-title { font-weight: bold; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+        .badge-group { display: flex; flex-wrap: wrap; gap: 6px; }
+        
+        .badge {
+            padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+        }
+        .tech-badge { background: #e8dbff; color: #5a2ca5; }
+        .social-badge { background: #d1f7ff; color: #006b83; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-nav">
+        <h1>👥 Equipo PucelaCar</h1>
+        <a href="../index.html" class="back-btn">← Volver al inicio</a>
+    </div>
+
+    <div class="team-grid">
+
+        <div class="member-card">
+            <div class="basic-info">
+                <h2>Nombre Apellido Apellido</h2>
+                <div class="alias">@alias_del_usuario</div>
+                <div class="email">correo@estudiantes.uva.es</div>
+            </div>
+
+            <div class="status-section">
+                <strong>Estatus (Semana Actual)</strong>
+                <div class="status-item">
+                    Capacidad horaria (10h/semana)
+                    <div class="status-bar-bg"><div class="status-bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="status-item">
+                    Disponibilidad
+                    <div class="status-bar-bg"><div class="status-bar-fill" style="width: 60%; background: #2ecc71;"></div></div>
+                </div>
+                <div class="status-item">
+                    Nivel de estrés
+                    <div class="status-bar-bg"><div class="status-bar-fill" style="width: 30%; background: #e74c3c;"></div></div>
+                </div>
+            </div>
+
+            <div class="skills-container">
+                <span class="skills-title">Skills Tecnológicas</span>
+                <div class="badge-group">
+                    <span class="badge tech-badge">Java (Alto)</span>
+                    <span class="badge tech-badge">JavaScript</span>
+                    <span class="badge tech-badge">Reporting</span>
+                    <span class="badge tech-badge">Web-dev</span>
+                </div>
+            </div>
+
+            <div class="skills-container">
+                <span class="skills-title">Skills Sociales</span>
+                <div class="badge-group">
+                    <span class="badge social-badge">Comunicación</span>
+                    <span class="badge social-badge">Mediador</span>
+                    <span class="badge social-badge">Organizado</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+</body>
+</html>
