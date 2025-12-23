@@ -120,6 +120,32 @@
         .tech-fill { background: var(--tech-color); }
         .social-fill { background: var(--social-color); }
         .skill-value { width: 5%; text-align: right; font-weight: bold; }
+        
+        .download-container {
+            max-width: 850px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-end; /* Alineado a la derecha de la lista */
+        }
+        
+        .btn-excel {
+            background-color: #1D6F42; /* Color verde típico de Excel */
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        
+        .btn-excel:hover {
+            background-color: #145532;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
 
     </style>
 </head>
@@ -129,6 +155,11 @@
         <h1>👥 Perfiles del Equipo</h1>
         <a href="../index.html" class="back-btn">← Volver al Panel Principal</a>
     </div>
+    <div class="download-container">
+    <a href="./assets/docs/PlantillaEquipo.xlsx" class="btn-excel" download>
+        📊 Descargar Excel detallado de la plantilla de equipo
+    </a>
+</div>
 
     <div class="team-grid">
 
@@ -386,7 +417,7 @@
                     <div class="skill-bar-wrapper">
                         <div class="skill-bar-fill social-fill" style="width: 60%;"></div>
                     </div>
-                    <span class="skill-value">6/5</span>
+                    <span class="skill-value">3/5</span>
                 </div>
                 <div class="skill-row">
                     <span class="skill-name">Compromiso</span>
@@ -453,8 +484,8 @@
                 <div class="skill-row">
                     <span class="skill-name">JavaScript</span>
                     <div class="skill-bar-wrapper">
-                        <div class="skill-bar-fill tech-fill" style="width: 60%;"></div> </div>
-                    <span class="skill-value">3/5</span>
+                        <div class="skill-bar-fill tech-fill" style="width: 80%;"></div> </div>
+                    <span class="skill-value">4/5</span>
                 </div>
 
                 <div class="skill-row">
@@ -655,7 +686,7 @@
                     <div class="skill-bar-wrapper">
                         <div class="skill-bar-fill social-fill" style="width: 100%;"></div>
                     </div>
-                    <span class="skill-value">5/5</span>
+                    <span class="skill-value">4/5</span>
                 </div>
             </div>
         </div>
