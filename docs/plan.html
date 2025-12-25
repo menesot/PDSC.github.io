@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PucelaCar | Documentos de Planificación</title>
+    <title>Planificación | PucelaCar</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* --- Configuración General --- */
         body, html {
-            min-height: 100%; /* Cambiado de height:100% para permitir scroll */
+            min-height: 100%;
             margin: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            /* Quitamos el centering absoluto para permitir scroll si hay muchos docs */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,7 +21,7 @@
         /* --- Fondo con Logo de la UVa (Marca de agua) --- */
         body::before {
             content: "";
-            position: fixed; /* Fijo para que no se mueva al hacer scroll */
+            position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             background-image: url('assets/images/logo-uva.jpg'); 
@@ -40,7 +39,7 @@
             padding: 40px 50px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 900px; /* Más ancho para que quepan las tarjetas */
+            max-width: 1000px; /* Ancho aumentado para acomodar mejor 3 columnas */
             width: 90%;
             margin-top: 50px;
             margin-bottom: 50px;
@@ -49,7 +48,7 @@
         /* --- Tipografía --- */
         h1 {
             margin: 0;
-            font-size: 2.5rem; /* Un poco más pequeño que la home para dar espacio */
+            font-size: 2.5rem;
             color: #7B2B95;
             font-weight: 700;
         }
@@ -68,7 +67,7 @@
         .docs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px; /* Espacio entre tarjetas */
             margin-top: 20px;
         }
 
@@ -83,6 +82,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 100%; /* Asegura que todas tengan la misma altura visual */
         }
 
         .doc-card:hover {
@@ -101,11 +101,10 @@
             gap: 8px;
         }
 
-        /* Icono de PDF puramente CSS */
         .pdf-icon {
             color: #e74c3c;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             border: 1px solid #e74c3c;
             border-radius: 4px;
             padding: 2px 4px;
@@ -116,10 +115,10 @@
             color: #666;
             margin-bottom: 20px;
             line-height: 1.4;
-            flex-grow: 1; /* Empuja los botones hacia abajo */
+            flex-grow: 1; 
         }
 
-        /* --- Botones de la tarjeta --- */
+        /* --- Botones --- */
         .btn-group {
             display: flex;
             gap: 10px;
@@ -131,7 +130,7 @@
             text-align: center;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: background 0.3s ease;
         }
@@ -181,46 +180,88 @@
             <article class="doc-card">
                 <div class="doc-title">
                     <span class="pdf-icon">PDF</span>
-                    Plan de Gestión
+                    PBS Alto Nivel
                 </div>
                 <p class="doc-desc">
-                    Documento inicial con el alcance del proyecto, cronograma estimado y asignación de roles del equipo.
+                    Estructura de Desglose del Producto (Product Breakdown Structure) mostrando los componentes principales del sistema a nivel general.
                 </p>
                 <div class="btn-group">
-                    <a href="assets/docs/plan_gestion_v1.pdf" target="_blank" class="btn btn-view">Ver Online</a>
-                    <a href="assets/docs/plan_gestion_v1.pdf" download class="btn btn-download">Descargar</a>
+                    <a href="assets/docs/PBS_Alto_Nivel.pdf" target="_blank" class="btn btn-view">Ver</a>
+                    <a href="assets/docs/PBS_Alto_Nivel.pdf" download class="btn btn-download">Descargar</a>
                 </div>
             </article>
 
             <article class="doc-card">
                 <div class="doc-title">
                     <span class="pdf-icon">PDF</span>
-                    Análisis de Riesgos
+                    PBS Detallado
                 </div>
                 <p class="doc-desc">
-                    Matriz de riesgos potenciales técnicos y temporales, junto con sus planes de contingencia.
+                    Desglose exhaustivo y jerárquico de todos los componentes, subcomponentes y partes que conforman el entregable final.
                 </p>
                 <div class="btn-group">
-                    <a href="assets/docs/analisis_riesgos.pdf" target="_blank" class="btn btn-view">Ver Online</a>
-                    <a href="assets/docs/analisis_riesgos.pdf" download class="btn btn-download">Descargar</a>
+                    <a href="assets/docs/PBS_Detallado.pdf" target="_blank" class="btn btn-view">Ver</a>
+                    <a href="assets/docs/PBS_Detallado.pdf" download class="btn btn-download">Descargar</a>
                 </div>
             </article>
 
             <article class="doc-card">
                 <div class="doc-title">
                     <span class="pdf-icon">PDF</span>
-                    Diagrama de Gantt
+                    PFD (Product Flow)
                 </div>
                 <p class="doc-desc">
-                    Visualización temporal de los hitos del proyecto actualizado a fecha de Noviembre.
+                    Diagrama de Flujo del Producto (Product Flow Diagram) que ilustra la secuencia lógica de creación de los componentes.
                 </p>
                 <div class="btn-group">
-                    <a href="assets/docs/gantt_nov.pdf" target="_blank" class="btn btn-view">Ver Online</a>
-                    <a href="assets/docs/gantt_nov.pdf" download class="btn btn-download">Descargar</a>
+                    <a href="assets/docs/PFD.pdf" target="_blank" class="btn btn-view">Ver</a>
+                    <a href="assets/docs/PFD.pdf" download class="btn btn-download">Descargar</a>
                 </div>
             </article>
 
-            </div>
+            <article class="doc-card">
+                <div class="doc-title">
+                    <span class="pdf-icon">PDF</span>
+                    WBS
+                </div>
+                <p class="doc-desc">
+                    Estructura de Desglose del Trabajo (Work Breakdown Structure) organizando el proyecto en paquetes de trabajo gestionables.
+                </p>
+                <div class="btn-group">
+                    <a href="assets/docs/WBS.pdf" target="_blank" class="btn btn-view">Ver</a>
+                    <a href="assets/docs/WBS.pdf" download class="btn btn-download">Descargar</a>
+                </div>
+            </article>
+
+            <article class="doc-card">
+                <div class="doc-title">
+                    <span class="pdf-icon">PDF</span>
+                    Diagrama Actividades
+                </div>
+                <p class="doc-desc">
+                    Representación visual del flujo de trabajo, mostrando la secuencia de actividades, decisiones y concurrencia en el proceso.
+                </p>
+                <div class="btn-group">
+                    <a href="assets/docs/Diagrama_Actividades.pdf" target="_blank" class="btn btn-view">Ver</a>
+                    <a href="assets/docs/Diagrama_Actividades.pdf" download class="btn btn-download">Descargar</a>
+                </div>
+            </article>
+
+            <article class="doc-card">
+                <div class="doc-title">
+                    <span class="pdf-icon">PDF</span>
+                    Informe Final
+                </div>
+                <p class="doc-desc">
+                    Documento conclusivo de la fase de planificación, resumiendo estrategias, alcances y la hoja de ruta definitiva del proyecto.
+                </p>
+                <div class="btn-group">
+                    <a href="assets/docs/Informe_Final.pdf" target="_blank" class="btn btn-view">Ver</a>
+                    <a href="assets/docs/Informe_Final.pdf" download class="btn btn-download">Descargar</a>
+                </div>
+            </article>
+
+        </div>
 
         <nav class="back-nav">
             <a href="./index.html" class="btn-back">
