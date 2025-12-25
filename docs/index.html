@@ -4,89 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PucelaCar | Documentación</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* --- Configuración General --- */
         body, html {
-            height: min-height;
+            /* Usamos 100vh para asegurar que ocupe toda la altura visible de la pantalla */
+            min-height: 100vh; 
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9; /* Color de fondo suave por si falla la imagen */
+            background-color: #f4f4f9;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: auto; /* Evita barras de desplazamiento */
+            
+            /* Flexbox para centrar la tarjeta perfectamente en medio de la pantalla */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            
+            /* overflow: auto permite scroll si la pantalla es muy pequeña (móviles) */
+            overflow: auto; 
         }
 
         /* --- Fondo con Logo de la UVa (Marca de agua) --- */
-        /* Usamos un pseudo-elemento para bajar la opacidad de la imagen sin afectar al texto */
         body::before {
             content: "";
-            position: absolute;
+            position: fixed; /* Fixed para que el fondo no se mueva */
             top: 0; left: 0;
             width: 100%; height: 100%;
-            /* RUTA A LA IMAGEN: Asegúrate de que coincida con donde la subiste */
             background-image: url('assets/images/logo-uva.jpg'); 
             background-position: center;
             background-repeat: no-repeat;
-            /* 'contain' ajusta el logo para que se vea entero sin cortarse */
             background-size: contain; 
-            opacity: 0.15; /* Hacemos el logo muy sutil (15% de opacidad) */
-            z-index: -1; /* Lo enviamos al fondo */
+            opacity: 0.15; 
+            z-index: -1; 
         }
 
-        /* --- Contenedor Principal --- */
+        /* --- Animación de Entrada --- */
+        @keyframes floatUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Contenedor Principal (La Tarjeta) --- */
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente para mejorar lectura */
-            padding: 40px 60px;
+            background: rgba(255, 255, 255, 0.95); /* Un poco más opaco para resaltar */
+            padding: 50px 60px; /* Un poco más de padding */
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
-            max-width: 600px;
+            /* Sombra más pronunciada para dar efecto de elevación/flotación */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+            max-width: 500px;
             width: 90%;
+            margin: 20px; /* Margen de seguridad para móviles */
+            
+            /* Aplicamos la animación */
+            animation: floatUp 0.8s ease-out forwards;
         }
 
         /* --- Tipografía --- */
         h1 {
             margin: 0;
-            font-size: 3rem;
-            color: #7B2B95; /* Color corporativo (ej. morado Pucela) */
+            font-size: 3.5rem; /* Ligeramente más grande */
+            color: #7B2B95; 
             font-weight: 700;
+            letter-spacing: -1px;
         }
 
         h2 {
             margin: 10px 0 40px 0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 300;
             color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* --- Menú de Navegación (Botones) --- */
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Espacio entre botones */
+            gap: 15px; 
         }
 
         .menu-link {
             display: block;
-            padding: 15px 20px;
+            padding: 18px 20px;
             background-color: white;
             border: 2px solid #7B2B95;
             color: #7B2B95;
             text-decoration: none;
             font-weight: 500;
-            border-radius: 8px;
-            transition: all 0.3s ease; /* Suaviza el efecto hover */
+            font-size: 1.1rem;
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Efecto al pasar el ratón por encima */
+        /* Efecto Hover mejorado */
         .menu-link:hover {
             background-color: #7B2B95;
             color: white;
-            transform: translateY(-3px); /* Pequeño elevamiento */
-            box-shadow: 0 5px 15px rgba(123, 43, 149, 0.3);
+            transform: translateY(-5px); /* Se eleva más */
+            box-shadow: 0 10px 20px rgba(123, 43, 149, 0.3);
+        }
+
+        /* Estilo específico para el botón de cierre para diferenciarlo sutilmente */
+        .link-cierre {
+            border-color: #333;
+            color: #333;
+        }
+        .link-cierre:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
     </style>
@@ -103,6 +134,7 @@
             <a href="./equipo.html" class="menu-link">👥 Información de Equipos</a>
             <a href="./reuniones.html" class="menu-link">📅 Actas de Reuniones</a>
             <a href="./plan.html" class="menu-link">📑 Documentos de Planificación</a>
+            <a href="./cierre.html" class="menu-link link-cierre">🏁 Cierre del Proyecto</a>
         </nav>
     </div>
 
