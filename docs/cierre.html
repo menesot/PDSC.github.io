@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cierre del Proyecto | PucelaCar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Configuración General (Consistente con Planificación) --- */
+        body, html {
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('assets/images/logo-uva.jpg'); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain; 
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 900px;
+            width: 90%;
+            margin: 50px 0;
+        }
+
+        h1 { margin: 0; color: #7B2B95; font-weight: 700; font-size: 2.5rem; text-align: center; }
+        h2 { margin: 10px 0 30px 0; color: #555; font-weight: 300; text-align: center; width: 100%; }
+
+        /* --- Secciones de Cierre --- */
+        .section-card {
+            background: #fff;
+            border-left: 5px solid #7B2B95;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #7B2B95;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .content-text {
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        /* --- Tabla de Resumen Rápido --- */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: #fdfbff;
+        }
+        .summary-table td {
+            padding: 12px;
+            border: 1px solid #eee;
+        }
+        .summary-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+            color: #7B2B95;
+        }
+
+        /* --- Botones --- */
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn-main { background: #7B2B95; color: white; }
+        .btn-main:hover { background: #5a1f6e; }
+
+        .btn-outline { border: 1px solid #7B2B95; color: #7B2B95; }
+        .btn-outline:hover { background: #f3e5f5; }
+
+        .back-nav { margin-top: 20px; text-align: center; }
+        .btn-back { color: #666; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .btn-back:hover { color: #7B2B95; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Cierre del Proyecto</h1>
+            <h2>Fase Final - PucelaCar PDSC</h2>
+        </header>
+
+        <div class="section-card">
+            <div class="section-title">📊 1. Informe de Costes Observados</div>
+            <p class="content-text">
+                Desglose detallado de la inversión realizada durante el ciclo de vida del proyecto, categorizando el gasto en capital humano y recursos físicos necesarios para la implementación.
+            </p>
+            <ul class="content-text">
+                <li><strong>Recursos Personales:</strong> Coste por hora del equipo de ingeniería y gestión.</li>
+                <li><strong>Recursos Materiales:</strong> Infraestructura IT, licencias de software y hardware prototipado.</li>
+            </ul>
+            <div class="btn-container">
+                <a href="assets/docs/Informe_Costes.pdf" target="_blank" class="btn btn-main">Ver Informe de Costes</a>
+                <a href="assets/docs/Informe_Costes.pdf" download class="btn btn-outline">Descargar PDF</a>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">⏱️ 2. Balance Global de Ejecución</div>
+            <table class="summary-table">
+                <tr>
+                    <td>Coste Total Acumulado</td>
+                    <td>€ [Insertar cifra final]</td>
+                </tr>
+                <tr>
+                    <td>Tiempo Total de Desarrollo</td>
+                    <td>[X] Semanas / [Y] Horas totales</td>
+                </tr>
+                <tr>
+                    <td>Fecha de Entrega Final</td>
+                    <td>Junio 2026 (Estimado)</td>
+                </tr>
+            </table>
+            <p class="content-text" style="font-size: 0.85rem; color: #777;">
+                * Datos extraídos de la comparativa entre la línea base de planificación y la ejecución real.
+            </p>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">✅ 3. Informe de Cumplimiento y Desviaciones</div>
+            <p class="content-text">
+                Análisis crítico sobre la consecución de los hitos marcados. Se detallan los productos entregados (PBS), la complejidad técnica afrontada en el desarrollo de la práctica y la gestión de las desviaciones temporales o de presupuesto detectadas.
+            </p>
+            <div class="btn-container">
+                <a href="assets/docs/Informe_Cumplimiento.pdf" target="_blank" class="btn btn-main">Ver Análisis de Objetivos</a>
+                <a href="assets/docs/Informe_Cumplimiento.pdf" download class="btn btn-outline">Descargar PDF</a>
+            </div>
+        </div>
+
+        <nav class="back-nav">
+            <a href="./index.html" class="btn-back">⬅ Volver al Menú Principal</a>
+        </nav>
+    </div>
+
+</body>
+</html>
