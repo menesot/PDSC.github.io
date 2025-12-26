@@ -216,6 +216,21 @@
             color: #444;
             margin-bottom: 20px;
         }
+        /* --- Estilo para el visor de PDF integrado --- */
+        .pdf-viewer-container {
+            width: 100%;
+            height: 600px; /* Altura suficiente para leer cómodamente */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer-container embed {
+            width: 100%;
+            height: 100%;
+        }
+        
 
     </style>
 </head>
@@ -761,6 +776,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="section-card">
+            <div class="section-title">📝 Asignación de Tareas y Recursos</div>
+            <p class="content-text">
+                A continuación se detalla la matriz de responsabilidades y la asignación específica de trabajo para cada paquete de las tareas del proyecto.
+            </p>
+            
+            <div class="pdf-viewer-container">
+                <embed src="assets/docs/Asignacion_tareas.pdf" type="application/pdf">
+            </div>
+            
+            <div class="btn-container">
+                <a href="assets/docs/Asignacion_tareas.pdf" download class="btn btn-outline">
+                   <i class="fas fa-download"></i> Descargar Documento de Asignación
+                </a>
+            </div>
+        </div>
+        
         <div class="report-separator">
             <span>Visualización del Documento</span>
         </div>
