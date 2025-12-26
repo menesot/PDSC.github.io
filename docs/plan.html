@@ -188,6 +188,58 @@
         }
 
         h1 { margin: 0; font-size: 1.8rem; color: #7B2B95; }
+        /* --- Estilos para el Informe en Pantalla --- */
+        .report-separator {
+            margin: 40px 0 20px 0;
+            border-top: 2px dashed #dcdcdc; /* Línea separadora */
+            text-align: center;
+            position: relative;
+        }
+        
+        .report-separator span {
+            background-color: #f4f4f9; /* Mismo color que el fondo del body */
+            padding: 0 15px;
+            color: #888;
+            font-size: 0.9rem;
+            position: relative;
+            top: -12px; /* Sube el texto sobre la línea */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .paper-sheet {
+            background-color: #ffffff;
+            padding: 50px; /* Margen amplio tipo Word */
+            border-radius: 4px; /* Bordes poco redondeados, más serio */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra sutil */
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+            text-align: justify; /* Texto justificado para lectura */
+        }
+
+        .paper-sheet h3 {
+            color: #333;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .paper-sheet h4 {
+            color: #7B2B95; /* Morado Pucela */
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .paper-sheet p {
+            font-size: 1rem;
+            line-height: 1.8; /* Espaciado cómodo para leer */
+            color: #444;
+        
 
     </style>
 </head>
@@ -287,11 +339,21 @@
 
         </div>
 
-        <nav class="back-nav">
-            <a href="./index.html" class="btn-back">
-                ⬅ Volver al Menú Principal
-            </a>
-        </nav>
+       <div class="report-separator">
+            <span>Visualización del Documento</span>
+        </div>
+
+        <div class="paper-sheet">
+            <h3>Informe</h3>
+            
+            <p>  El proyecto se divide inicialmente en dos grandes bloques: Planificación y Diseño. La PBS de alto nivel establece como vamos creando de la infraestructura web y la documentación base. Hacemos una PBS detallada que define los productos en componentes técnicos específicos, como pueden ser los modelos de diseño (Diagramas de Estilo, Comportamiento y Despliegue) y la aplicación funcional.
+                El Diagrama de Flujo de Productos (PFD) unimos todo lo realizado en estas entregas, mostrando cómo las decisiones tecnológicas y la descripción de la arquitectura nos lleva a la creación de mockups y diagramas de clases, culminando en la implementación de los casos de uso y el sistema completo.
+                La WBS (Estructura de Desglose de Trabajo) organiza el esfuerzo en fases: Planificar, Crear página y Diseñar/Implementar. Bajo la dirección del Gestor hemos definido actividades críticas como la creación de las estructuras de productos (PBS, PFD, WBS) y la gestión del equipo.
+                Esta estructura la ponemos en una Red de Actividades que define la secuencia lógica y el esfuerzo observado. El camino crítico comienza con el análisis y la toma de decisiones iniciales, avanzando hacia el modelado del sistema. También hemos identificado los hitos.
+                El proceso concluye con el cierre del proyecto, donde estimamos los costes finales, calculamos los tiempos de ejecución y subimos toda la documentación de planificación a la web.
+
+            </p>
+        </div>
     </div>
 
 </body>
