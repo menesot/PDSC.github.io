@@ -226,7 +226,7 @@
             font-family: 'Roboto', sans-serif; /* Mantenemos la fuente */
         }
 
-        .h3 {
+        .paper-sheet h3 {
             color: #333;
             font-size: 1.8rem;
             text-align: center;
@@ -267,7 +267,9 @@
         <h1>📅 Desarrollo del trabajo</h1>
     </header>
 
-    <h3> Actas de Reuniones</h3>
+    <div class="paper-sheet">
+        <h3> Actas de Reuniones</h3>
+    </div>
     <main class="timeline-container">    
 
         <div class="meeting-card left">
@@ -532,16 +534,19 @@
             </div>
         </div>
     </main>
-    <h3>Riesgos y Conflictos observados</h3>
-        <div class="pdf-viewer-container">
-            <embed src="assets/docs/Riesgos_y_Conflictos.pdf" type="application/pdf">
-        </div>
-        
-        <div class="btn-container">
-            <a href="assets/docs/Riesgos_y_Conflictos.pdf" download class="btn btn-outline">
-               <i class="fas fa-download"></i> Descargar Documento de Riesgos y Conflictos
-            </a>
-        </div>
+    <div class="paper-sheet">
+        <h3>Riesgos y Conflictos observados</h3>
+    </div>
+    
+    <div class="pdf-viewer-container">
+        <embed src="assets/docs/Riesgos_y_Conflictos.pdf" type="application/pdf">
+    </div>
+    
+    <div class="btn-container">
+        <a href="assets/docs/Riesgos_y_Conflictos.pdf" download class="btn btn-outline">
+           <i class="fas fa-download"></i> Descargar Documento de Riesgos y Conflictos
+        </a>
+    </div>
     <div class="report-separator">
         <span>Visualización del Documento</span>
     </div>
