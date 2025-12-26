@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cierre del Proyecto | PucelaCar</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- Configuración General (Consistente con Planificación) --- */
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <style>
+        /* --- Configuración General --- */
         body, html {
             min-height: 100vh;
             margin: 0;
@@ -41,24 +41,49 @@
             margin: 50px 0;
         }
 
-        h1 { margin: 0; color: #7B2B95; font-weight: 700; font-size: 2.5rem; text-align: center; }
-        h2 { margin: 10px 0 30px 0; color: #555; font-weight: 300; text-align: center; width: 100%; }
+        /* --- Cabecera con botón volver --- */
+        header {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative; /* Necesario para posicionar el botón absolute */
+        }
+        
+        .nav-back {
+            position: absolute;
+            left: 0;
+            top: 10px; /* Ajustado para alinear con el H1 */
+            text-decoration: none;
+            color: #7B2B95;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-back:hover { color: #5a1f6e; }
 
-        /* --- Secciones de Cierre --- */
+        h1 { margin: 0; color: #7B2B95; font-weight: 700; font-size: 2.2rem; }
+        h2 { margin: 5px 0 0 0; color: #555; font-weight: 300; font-size: 1.1rem; }
+
+        /* --- Estilos de las Tarjetas (Secciones) --- */
         .section-card {
             background: #fff;
             border-left: 5px solid #7B2B95;
-            padding: 25px;
+            padding: 30px; /* Un poco más de padding para leer mejor */
             margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             text-align: left;
+            border: 1px solid #eee; /* Borde sutil alrededor */
         }
 
         .section-title {
             font-size: 1.4rem;
             color: #7B2B95;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -71,7 +96,30 @@
             margin-bottom: 20px;
         }
 
-        /* --- Tabla de Resumen Rápido --- */
+        /* --- Estilos Específicos para el Informe de Texto (Apartado 3) --- */
+        .report-body {
+            text-align: justify; /* Justificado para parecer documento oficial */
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .report-body h3 {
+            color: #5a1f6e; /* Un tono un poco más oscuro */
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .report-body p {
+            margin-bottom: 15px;
+        }
+
+        /* --- Tabla de Resumen --- */
         .summary-table {
             width: 100%;
             border-collapse: collapse;
@@ -112,31 +160,11 @@
         .btn-outline { border: 1px solid #7B2B95; color: #7B2B95; }
         .btn-outline:hover { background: #f3e5f5; }
 
-        .back-nav { margin-top: 20px; text-align: center; }
-        .btn-back { color: #666; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .btn-back:hover { color: #7B2B95; }
-        header {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        /* Ajuste Responsive para el botón volver */
+        @media (max-width: 768px) {
+            .nav-back { position: relative; left: 0; top: 0; margin-bottom: 15px; justify-content: center; }
+            header { text-align: center; }
         }
-        .nav-back {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            text-decoration: none;
-            color: #7B2B95;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        h1 { margin: 0; font-size: 1.8rem; color: #7B2B95; }
 
     </style>
 </head>
@@ -145,7 +173,7 @@
     <div class="container">
         <header>
             <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Volver</a>
-            <h1>📅 Actas de Reuniones</h1>
+            <h1>Cierre del Proyecto</h1>
             <h2>Fase Final - PucelaCar PDSC</h2>
         </header>
 
@@ -174,30 +202,34 @@
                 </tr>
                 <tr>
                     <td>Tiempo Total de Desarrollo</td>
-                    <td>[X] Semanas / [Y] Horas totales</td>
+                    <td>6 Semanas / [Y] Horas totales</td>
                 </tr>
                 <tr>
                     <td>Fecha de Entrega Final</td>
                     <td>Junio 2026 (Estimado)</td>
                 </tr>
             </table>
-            <p class="content-text" style="font-size: 0.85rem; color: #777;">
-                * Datos extraídos de la comparativa entre la línea base de planificación y la ejecución real.
-            </p>
         </div>
 
         <div class="section-card">
             <div class="section-title">✅ 3. Informe de Cumplimiento y Desviaciones</div>
-            <p class="content-text">
-                Análisis crítico sobre la consecución de los hitos marcados. Se detallan los productos entregados (PBS), la complejidad técnica afrontada en el desarrollo de la práctica y la gestión de las desviaciones temporales o de presupuesto detectadas.
-            </p>
-            <div class="btn-container">
-                <a href="assets/docs/Informe_Cumplimiento.pdf" target="_blank" class="btn btn-main">Ver Análisis de Objetivos</a>
-                <a href="assets/docs/Informe_Cumplimiento.pdf" download class="btn btn-outline">Descargar PDF</a>
+            
+            <div class="report-body">
+                
+                <p> Durante el desarrollo del proyecto se elaboraron diversos productos clave, entre los que destacan la arquitectura de la aplicación, la definición del modelo de datos, la documentación técnica asociada y la implementación funcional de los casos de uso principales. Uno de los elementos más relevantes fue la implementación de la capa commons y el mecanismo de serialización de objetos para la comunicación entre cliente y servidor. Este componente resultó fundamental para garantizar la coherencia de los mensajes intercambiados y la correcta interpretación de los datos en ambos extremos del sistema.
+                </p>
+                <p>
+                    Otra dificultad relevante estuvo relacionada con la organización del trabajo en las primeras etapas del proyecto. Aunque contábamos con una planificación inicial, la ausencia de una estructura de tareas suficientemente detallada provocó cierta incertidumbre en la priorización de actividades. Esto se reflejó especialmente en el diseño temprano de la arquitectura y en la coordinación entre módulos, lo que a su vez impactó en los plazos asociados a la implementación técnica.
+                </p>
+                <p>
+                   No obstante, estas desviaciones se tradujeron en un aprendizaje valioso. A lo largo del desarrollo fuimos refinando nuestra metodología, consolidando una WBS mejor estructurada, definiendo más claramente los roles y adoptando decisiones de diseño más homogéneas. Entre los productos más importantes elaborados destacan la documentación de diseño, los diagramas arquitectónicos, el conjunto de pruebas realizadas sobre la comunicación cliente-servidor y la versión final del sistema implementado. 
+                </p>
+                <p>
+                    De cara al futuro, consideramos que un proyecto similar podría abordarse de forma mucho más eficiente. La experiencia adquirida nos permitiría tomar decisiones tempranas como la adopción de un patrón de diseño uniforme, la definición desde el inicio de la capa de comunicación y un mayor esfuerzo inicial en análisis y planificación técnica. Todo ello redundaría en un desarrollo más fluido, una reducción de desviaciones y una mejora en el cumplimiento de los objetivos planteados.
+                </p>
             </div>
         </div>
 
-        
     </div>
 
 </body>
