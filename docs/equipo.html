@@ -168,6 +168,54 @@
             gap: 5px;
         }
         h1 { margin: 0; font-size: 1.8rem; color: #7B2B95; }
+        /* --- Estilos para el Informe en Pantalla --- */
+        .report-separator {
+            margin: 50px 0 20px 0;
+            border-top: 2px dashed #ccc; /* Línea separadora */
+            text-align: center;
+        }
+        
+        .report-separator span {
+            background-color: #f4f4f9; /* Mismo color de fondo para "cortar" la línea */
+            padding: 0 15px;
+            color: #888;
+            font-size: 0.85rem;
+            position: relative;
+            top: -12px; /* Sube el texto sobre la línea */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .paper-sheet {
+            background-color: #ffffff;
+            padding: 60px; /* Margen amplio tipo documento oficial */
+            border-radius: 4px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+            text-align: justify; /* Justificado para que parezca un informe real */
+            font-family: 'Roboto', sans-serif; /* Mantenemos la fuente */
+        }
+
+        .paper-sheet h3 {
+            color: #333;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #7B2B95; /* Morado corporativo */
+        }
+
+        .paper-sheet p {
+            font-size: 1rem;
+            line-height: 1.8; /* Espaciado cómodo para lectura */
+            color: #444;
+            margin-bottom: 20px;
+        }
 
     </style>
 </head>
@@ -713,6 +761,15 @@
                 </div>
             </div>
         </div>
+        <div class="report-separator">
+            <span>Visualización del Documento</span>
+        </div>
+
+        <div class="paper-sheet">
+            <h3>Informe</h3>
+            <p>La estructura elegida ha demostrado ser eficiente para el supuesto práctico que se nos ha propuesto. La separación de roles permitió que la gestión de la infraestructura (Javier) avanzara en paralelo con el diseño de la lógica (Jaime) y la administración del git (Miguel), mientras el Gestor (Carlos) mantenía la coherencia con el plan de proyecto.</p>
+            <p>Como punto de mejora, se observó que la carga de trabajo en la fase final de integración en GitLab requirió un esfuerzo extra de todos los participantes para resolver dependencias entre los paquetes client, server y commons. No obstante, la comunicación constante reflejada en las actas permitió cumplir los hitos dentro de los plazos previstos.</p>
+        
         </div>
 
 </body>
