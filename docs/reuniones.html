@@ -75,6 +75,7 @@
             width: 50%;
             box-sizing: border-box;
         }
+        
 
         .meeting-card::after {
             content: '';
@@ -145,46 +146,52 @@
         .left .topics-list li::after { content: " •"; color: #7B2B95; font-weight: bold; }
         .right .topics-list li::before { content: "• "; color: #7B2B95; font-weight: bold; }
 
-        /* Estilo mejorado para Acuerdos Adoptados */
         .agreements-list {
+            list-style: none; 
             padding: 0;
             margin: 0;
-            list-style: none;
         }
-
+        
         .agreements-list li {
+            position: relative;
             margin-bottom: 8px;
-            padding: 10px 15px;
-            background-color: #f8f6fc;
-            border-left: 4px solid #7B2B95;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: #444;
-            display: flex;
-            align-items: flex-start;
-            text-align: left;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            line-height: 1.4;
+            display: block; /* Asegura que cada acuerdo ocupe su propia línea */
         }
-
-        /* Icono de check para TODOS los acuerdos (Corregido) */
+        
+        /* Solo usamos ::before para el check */
         .agreements-list li::before {
             content: "\f00c" !important;
             font-family: "Font Awesome 6 Free" !important;
             font-weight: 900 !important;
-            margin-right: 12px;
             color: #7B2B95;
             display: inline-block;
         }
-
-        /* Limpiamos interferencias de los estilos de timeline previos */
-        .left .agreements-list li::after, 
-        .right .agreements-list li::before {
-            content: "\f00c" !important; 
+        
+        /* Alineación específica para el lado izquierdo */
+        .left .agreements-list li::before { 
+            margin-left: 12px; 
+            float: right; /* El check va a la derecha porque el texto está alineado a la derecha */
         }
-
-        .agreements-list b {
-            color: #7B2B95;
-            margin-right: 4px;
+        
+        /* Alineación específica para el lado derecho */
+        .right .agreements-list li::before { 
+            margin-right: 12px; 
+            float: left; /* El check va a la izquierda porque el texto empieza por la izquierda */
+        }
+        
+        /* LA SOLUCIÓN DEFINITIVA AL RECUADRO VACÍO:
+           Forzamos a que no exista ningún ::after en los elementos de la lista */
+        .meeting-card .agreements-list li::after {
+            content: none !important;
+            display: none !important;
+        }
+        
+        /* Limpieza de floats para evitar errores de diseño */
+        .agreements-list li::after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
         @media screen and (max-width: 768px) {
