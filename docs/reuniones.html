@@ -196,6 +196,54 @@
             .left .topics-list li::after { content: ""; }
             .left .topics-list li::before { content: "• "; }
         }
+        /* --- Estilos para el Informe en Pantalla --- */
+        .report-separator {
+            margin: 50px 0 20px 0;
+            border-top: 2px dashed #ccc; /* Línea separadora */
+            text-align: center;
+        }
+        
+        .report-separator span {
+            background-color: #f4f4f9; /* Mismo color de fondo para "cortar" la línea */
+            padding: 0 15px;
+            color: #888;
+            font-size: 0.85rem;
+            position: relative;
+            top: -12px; /* Sube el texto sobre la línea */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .paper-sheet {
+            background-color: #ffffff;
+            padding: 60px; /* Margen amplio tipo documento oficial */
+            border-radius: 4px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+            text-align: justify; /* Justificado para que parezca un informe real */
+            font-family: 'Roboto', sans-serif; /* Mantenemos la fuente */
+        }
+
+        .paper-sheet h3 {
+            color: #333;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #7B2B95; /* Morado corporativo */
+        }
+
+        .paper-sheet p {
+            font-size: 1rem;
+            line-height: 1.8; /* Espaciado cómodo para lectura */
+            color: #444;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -468,7 +516,15 @@
                 </ul>
             </div>
         </div>
+        <div class="report-separator">
+            <span>Visualización del Documento</span>
+        </div>
 
+        <div class="paper-sheet">
+            <h3>Informe</h3>
+            <p>La coordinación del equipo se ha basado en un calendario de reuniones presenciales y telemáticas documentadas en las Actas de Reunión. En cada sesión, el Gestor ha registrado los objetivos, los asistentes y los acuerdos alcanzados. Entre los hitos de gestión más relevantes destacan la definición de la arquitectura cliente/servidor el 26 de noviembre y la decisión crítica de pivotar hacia una interfaz CLI el 9 de diciembre para garantizar la entrega del núcleo funcional.</p>
+            <P>Para cumplir con el requisito de seguimiento, hemos elaborado informes semanales que reflejan cómo va el proyecto. Cada informe detalla las tareas activas (extrayéndolas de la Red de Actividades), las reuniones mantenidas y los productos conseguidos según la PBS. Este sistema permitió detectar desviaciones en los objetivos que planteamos.  </P>
+            <p>El proyecto ha sufrido dificultades, las cuales se han resuelto mediante planes de mitigación. El riesgo técnico más significativo fue la inestabilidad de la máquina virtual para MariaDB, lo hizo que paralizásemos el desarrollo del servidor. La resolución consistió en habilitar entornos de desarrollo locales, permitiendo que las tareas continuaran sin interrupciones. Además, los conflictos de agenda se resolvieron mediante la adopción de herramientas de comunicación telemática, garantizando que el flujo de trabajo no dependiera exclusivamente de la coincidencia física del equipo.</p>
     </main>
 
 </body>
